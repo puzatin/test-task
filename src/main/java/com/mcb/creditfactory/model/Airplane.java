@@ -1,13 +1,11 @@
 package com.mcb.creditfactory.model;
 
-import com.mcb.creditfactory.model.assessment.AirplaneAssessment;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
-import java.util.SortedSet;
 
 @Data
 @NoArgsConstructor
@@ -30,7 +28,7 @@ public class Airplane {
 
     @ElementCollection
     @CollectionTable(name = "AIRPLANE_ASSESSMENT", joinColumns = @JoinColumn(name = "airplane_id"))
-    private Set<AirplaneAssessment> values;
+    private Set<Assessment> values;
 
 
 }

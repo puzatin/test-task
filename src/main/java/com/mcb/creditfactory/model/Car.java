@@ -1,6 +1,5 @@
 package com.mcb.creditfactory.model;
 
-import com.mcb.creditfactory.model.assessment.CarAssessment;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,5 +25,5 @@ public class Car {
 
     @ElementCollection
     @CollectionTable(name = "CAR_ASSESSMENT", joinColumns = @JoinColumn(name = "car_id"))
-    private Set<CarAssessment> values;
+    private Set<Assessment> values;
 }

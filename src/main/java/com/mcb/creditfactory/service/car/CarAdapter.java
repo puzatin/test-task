@@ -3,7 +3,7 @@ package com.mcb.creditfactory.service.car;
 import com.mcb.creditfactory.dto.CarDto;
 import com.mcb.creditfactory.external.CollateralObject;
 import com.mcb.creditfactory.external.CollateralType;
-import com.mcb.creditfactory.model.assessment.CarAssessment;
+import com.mcb.creditfactory.model.Assessment;
 import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
@@ -38,8 +38,8 @@ public class CarAdapter implements CollateralObject {
     }
 
 
-    private CarAssessment getLastAssessment() {
-        Comparator<CarAssessment> comparator = Comparator.comparing(CarAssessment::getAssessDate, ChronoLocalDate.timeLineOrder());
+    private Assessment getLastAssessment() {
+        Comparator<Assessment> comparator = Comparator.comparing(Assessment::getAssessDate, ChronoLocalDate.timeLineOrder());
         return car.getValues().stream().max(comparator).get();
 
     }

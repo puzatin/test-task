@@ -1,7 +1,7 @@
 package com.mcb.creditfactory.dto;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.mcb.creditfactory.model.assessment.CarAssessment;
+import com.mcb.creditfactory.model.Assessment;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,5 +18,5 @@ public class CarDto implements Collateral {
     private String model;
     private Double power;
     private Short year;
-    private Set<CarAssessment> values;
+    private Set<Assessment> values;
 }

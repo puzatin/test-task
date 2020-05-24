@@ -3,7 +3,7 @@ package com.mcb.creditfactory.service.airplane;
 import com.mcb.creditfactory.dto.AirplaneDto;
 import com.mcb.creditfactory.external.CollateralObject;
 import com.mcb.creditfactory.external.CollateralType;
-import com.mcb.creditfactory.model.assessment.AirplaneAssessment;
+import com.mcb.creditfactory.model.Assessment;
 import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
@@ -35,8 +35,8 @@ public class AirplaneAdapter implements CollateralObject {
         return CollateralType.AIRPLANE;
     }
 
-    private AirplaneAssessment getLastAssessment() {
-        Comparator<AirplaneAssessment> comparator = Comparator.comparing(AirplaneAssessment::getAssessDate, ChronoLocalDate.timeLineOrder());
+    private Assessment getLastAssessment() {
+        Comparator<Assessment> comparator = Comparator.comparing(Assessment::getAssessDate, ChronoLocalDate.timeLineOrder());
         return airplane.getValues().stream().max(comparator).get();
     }
 }
